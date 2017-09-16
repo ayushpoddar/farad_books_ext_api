@@ -12,7 +12,7 @@ class S3Upload
     s3 = Aws::S3::Resource.new(region: 'ap-south-1', credentials: creds)
     upload_key = Pathname.new(options[:prefix]).join(options[:filename]).to_s
     obj = s3.bucket(options[:bucket_name]).object(upload_key)
-    if obj.upload_file(file.path, acl: "public-read", content_type: file.mime_type)
+    if obj.upload_file(file.path, acl: "public-read", content_type: file.mime_type, cache_control: "max-age=#{6.months.to_i}")
       {
         status: "success",
         public_url: obj.public_url,

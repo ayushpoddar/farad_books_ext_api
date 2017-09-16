@@ -1,0 +1,15 @@
+allow_lossy: true
+pngout: false
+svgo: false
+jpegoptim:
+  allow_lossy: true
+  max_quality: 85
+jpegrecompress:
+  allow_lossy: true
+  quality: 2
+pngcrush:
+  blacken: false
+pngquant:
+  allow_lossy: true
+  quality: !ruby/range 50..90
+  speed: 1

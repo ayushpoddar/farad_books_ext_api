@@ -24,6 +24,7 @@ class S3Upload
       {
         status: "failure",
         message: "Failed to upload to s3"
+        retry: true
       }
     end
   end

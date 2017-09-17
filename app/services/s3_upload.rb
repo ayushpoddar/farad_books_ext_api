@@ -23,7 +23,7 @@ class S3Upload
     else
       {
         status: "failure",
-        message: "Failed to upload to s3"
+        message: "Failed to upload to s3",
         retry: true
       }
     end
